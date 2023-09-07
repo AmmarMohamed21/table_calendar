@@ -83,6 +83,9 @@ class HeaderStyle {
 
   final double headerBottomSpacing;
 
+  final double chevronWidth;
+  final double chevronHeight;
+
   /// Creates a `HeaderStyle` used by `TableCalendar` widget.
   const HeaderStyle({
     this.titleCentered = false,
@@ -114,5 +117,7 @@ class HeaderStyle {
     this.decoration = const BoxDecoration(),
     this.prefix,
     this.headerBottomSpacing = 0.0,
+    this.chevronWidth = 60.0,
+    this.chevronHeight = 45.0,
   });
 }

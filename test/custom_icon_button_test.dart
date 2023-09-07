@@ -25,6 +25,8 @@ void main() {
             onTap: () {
               buttonTapped = true;
             },
+            height: 45,
+            width: 60,
           ),
         ),
       );

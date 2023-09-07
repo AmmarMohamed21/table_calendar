@@ -53,6 +53,8 @@ class CalendarHeader extends StatelessWidget {
             CustomIconButton(
               icon: headerStyle.leftChevronIcon,
               onTap: onLeftChevronTap,
+              height: headerStyle.chevronHeight,
+              width: headerStyle.chevronWidth,
             ),
           Expanded(
             child: Row(
@@ -95,6 +97,8 @@ class CalendarHeader extends StatelessWidget {
             CustomIconButton(
               icon: headerStyle.rightChevronIcon,
               onTap: onRightChevronTap,
+              height: headerStyle.chevronHeight,
+              width: headerStyle.chevronWidth,
             ),
         ],
       ),
