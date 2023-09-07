@@ -79,6 +79,8 @@ class HeaderStyle {
   /// Decoration of the header.
   final BoxDecoration decoration;
 
+  final Widget? prefix;
+
   /// Creates a `HeaderStyle` used by `TableCalendar` widget.
   const HeaderStyle({
     this.titleCentered = false,
@@ -99,10 +101,15 @@ class HeaderStyle {
     this.rightChevronPadding = const EdgeInsets.all(12.0),
     this.leftChevronMargin = const EdgeInsets.symmetric(horizontal: 8.0),
     this.rightChevronMargin = const EdgeInsets.symmetric(horizontal: 8.0),
-    this.leftChevronIcon = const Icon(Icons.chevron_left),
-    this.rightChevronIcon = const Icon(Icons.chevron_right),
+    this.leftChevronIcon = const Icon(
+      Icons.chevron_left,
+    ),
+    this.rightChevronIcon = const Icon(
+      Icons.chevron_right,
+    ),
     this.leftChevronVisible = true,
     this.rightChevronVisible = true,
     this.decoration = const BoxDecoration(),
+    this.prefix,
   });
 }

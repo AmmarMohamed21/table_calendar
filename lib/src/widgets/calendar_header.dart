@@ -53,22 +53,29 @@ class CalendarHeader extends StatelessWidget {
             CustomIconButton(
               icon: headerStyle.leftChevronIcon,
               onTap: onLeftChevronTap,
-              margin: headerStyle.leftChevronMargin,
-              padding: headerStyle.leftChevronPadding,
             ),
           Expanded(
-            child: headerTitleBuilder?.call(context, focusedMonth) ??
-                GestureDetector(
-                  onTap: onHeaderTap,
-                  onLongPress: onHeaderLongPress,
-                  child: Text(
-                    text,
-                    style: headerStyle.titleTextStyle,
-                    textAlign: headerStyle.titleCentered
-                        ? TextAlign.center
-                        : TextAlign.start,
-                  ),
-                ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                headerStyle.prefix ?? SizedBox.shrink(),
+                headerStyle.prefix != null
+                    ? SizedBox(width: 8.0)
+                    : SizedBox.shrink(),
+                headerTitleBuilder?.call(context, focusedMonth) ??
+                    GestureDetector(
+                      onTap: onHeaderTap,
+                      onLongPress: onHeaderLongPress,
+                      child: Text(
+                        text,
+                        style: headerStyle.titleTextStyle,
+                        textAlign: headerStyle.titleCentered
+                            ? TextAlign.center
+                            : TextAlign.start,
+                      ),
+                    ),
+              ],
+            ),
           ),
           if (headerStyle.formatButtonVisible &&
               availableCalendarFormats.length > 1)
@@ -88,8 +95,6 @@ class CalendarHeader extends StatelessWidget {
             CustomIconButton(
               icon: headerStyle.rightChevronIcon,
               onTap: onRightChevronTap,
-              margin: headerStyle.rightChevronMargin,
-              padding: headerStyle.rightChevronPadding,
             ),
         ],
       ),
