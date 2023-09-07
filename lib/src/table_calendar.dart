@@ -476,6 +476,9 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
               );
             },
           ),
+        SizedBox(
+          height: widget.headerStyle.headerBottomSpacing,
+        ),
         Flexible(
           flex: widget.shouldFillViewport ? 1 : 0,
           child: TableCalendarBase(
